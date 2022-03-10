@@ -1,0 +1,25 @@
+.header-position {
+  height: 70px;
+  background-color: black;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  background-color: rgba(17, 13, 13, 0.6);
+}
+
+#navbar .navbar-right {
+  justify-content: flex-end;
+}
+#navbar .navbar-right a {
+  padding-right: 40px;
+  padding-left: 40px;
+  color: black;
+  font-weight: bold;
+  color: white;
+}

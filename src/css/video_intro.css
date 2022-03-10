@@ -1,0 +1,12 @@
+.movie-intro-wrap {
+  position: relative;
+  height: auto;
+  padding-top: 56%;
+  pointer-events: none;
+}
+.react-player {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: absolute;
+}

@@ -1,0 +1,39 @@
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #fdb706;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  font-size: 2rem;
+  color: #fdb706;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+
+.scroll-btn-hide {
+  opacity: 0;
+}
+.scroo-btn-show {
+  opacity: 1;
+}
+.scroll-btn:hover {
+  background-color: #fdb706;
+  color: black;
+  animation: updown 1s ease infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

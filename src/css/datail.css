@@ -1,0 +1,65 @@
+.detail-wrap {
+  pointer-events: none;
+  position: relative;
+}
+
+.right-text-wrap {
+  flex: 8;
+  color: red;
+}
+.nobackground {
+  background: transparent !important;
+  border: 0;
+}
+.detail-texts {
+  font-size: 1.4rem;
+  color: white;
+}
+.detail-kr-title {
+  color: #fdb706;
+  font-weight: bold;
+}
+.pr-4 {
+  padding-right: 1.5rem;
+}
+.subtitle {
+  border-bottom: 1px solid #fdb706;
+  color: rgb(170, 170, 170);
+}
+.cast-text {
+  color: #fdb706;
+  font-weight: bold;
+}
+.cast-wrap {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.cast-list {
+  display: flex;
+  gap: 15px;
+  width: calc(150px * 20);
+}
+.cast {
+  width: 150px;
+  color: white;
+}
+.cast-img-wrap {
+  width: 100%;
+  height: 200px;
+}
+.cast-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.noimg {
+  color: white;
+  text-align: center;
+  line-height: 200px;
+}
+.role-name {
+  color: rgb(149, 149, 149);
+}

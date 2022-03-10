@@ -1,0 +1,23 @@
+.search-wrap {
+  text-align: center;
+  position: relative;
+}
+.search {
+  display: inline-block;
+  position: relative;
+  width: 60%;
+}
+.search-input {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(214, 214, 214);
+  border-radius: 25px;
+  padding-left: 20px;
+}
+
+.search-text {
+  position: absolute;
+  left: 20px;
+  bottom: -30px;
+  color: #fdb706;
+}

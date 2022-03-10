@@ -1,0 +1,74 @@
+.container-fluid {
+  background-color: rgb(17, 13, 13);
+  padding: 40px 0;
+}
+
+.title {
+  padding-left: 20px;
+  border-left: 4px solid #fdb706;
+  font-size: 1.5rem;
+  color: white;
+}
+.text-color,
+.text-color a {
+  color: rgb(194, 194, 194);
+  transition: 0.4s all;
+}
+
+.card-wrap {
+  transition: 0.4s all;
+}
+.card-wrap:hover {
+  transform: scale(1.1);
+}
+.card-wrap:hover .text-color {
+  color: #fdb706;
+}
+.card-wrap:hover .text-color a {
+  color: #fdb706;
+}
+.card {
+  background-color: rgb(17, 13, 13);
+}
+.card-img.top {
+  cursor: pointer;
+}
+.subject {
+  font-size: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.subject a:hover {
+  text-decoration: underline;
+}
+.left-text {
+  float: left;
+  user-select: none;
+}
+.right-btn {
+  float: right;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid rgb(59, 59, 59);
+  padding: 5px 10px;
+  color: rgb(194, 194, 194);
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.2s all;
+}
+.right-btn:hover {
+  background-color: #fdb706;
+  color: black;
+}
+.star {
+  color: red;
+}
+@media (min-width: 1600px) {
+  .row-cols-xl-4 > * {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}

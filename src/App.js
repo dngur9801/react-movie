@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import PopularContainer from './container/PopularContainer';
+import NowPlayingContainer from './container/NowPlayingContainer';
+import VideoPlayer from './component/VideoPlayer';
+import UpComingContainer from './container/UpComingContainer';
+import DetailContainer from './container/DetailContainer';
+import { useSelector } from 'react-redux';
+import MovieSearchContainer from './container/MovieSearchContainer';
 
 function App() {
+  const state = useSelector(state => state.movieReducer);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {state.videoState && <VideoPlayer />}
+      <Switch>
+        <Route path='/' component={PopularContainer} exact />
+        <Route path='/nowplaying' component={NowPlayingContainer} />
+        <Route path='/upcoming' component={UpComingContainer} />
+        <Route path='/detail/:id' component={DetailContainer} />
+        <Route path='/search' component={MovieSearchContainer}></Route>
+        {/* <Route render /> */}
+      </Switch>
     </div>
   );
 }
