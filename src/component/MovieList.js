@@ -6,9 +6,16 @@ function MovieList({ movie, idx }) {
     <div className='card-wrap mt-5 mb-5'>
       <Card>
         <Link to={`/detail/${movie.id}`}>
+          {}
           <Card.Img
             variant='top'
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : '../noimg.jpeg'
+            }
+            title={movie.title}
+            alt={movie.title}
           />
         </Link>
         <Card.Body>

@@ -8,7 +8,6 @@ export const setVideoHide = () => ({ type: VIDEO_HIDE });
 
 const initialState = {
   videoState: '',
-  number: '123',
 };
 
 // reducer

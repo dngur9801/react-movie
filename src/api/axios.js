@@ -18,7 +18,9 @@ export const movieApi = {
   credits: id => request.get(`movie/${id}/credits`),
   similar: id => request.get(`movie/${id}/similar`),
   recommendations: id => request.get(`movie/${id}/recommendations`),
-
+  person: id => request.get(`person/${id}`),
+  personCredits: id => request.get(`person/${id}/movie_credits`),
+  personImages: id => request.get(`person/${id}/images`),
   search: keyword =>
     request.get('search/movie', {
       params: {

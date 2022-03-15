@@ -7,6 +7,7 @@ import { setVideoHide } from '../reducers/movieReducer';
 import styled from 'styled-components';
 import Loading from './Loading';
 import MovieList from './MovieList';
+import { Link } from 'react-router-dom';
 
 function Detail({ id }) {
   const dispatch = useDispatch();
@@ -26,7 +27,10 @@ function Detail({ id }) {
       .then(result => {
         return result.data;
       })
-      .then(data => setDetail(data));
+      .then(data => {
+        setDetail(data);
+        setLoading(false);
+      });
 
     movieApi
       .credits(id)
@@ -35,6 +39,7 @@ function Detail({ id }) {
       })
       .then(data => {
         setCredits(data.cast.slice(0, 20));
+        setLoading(false);
       });
 
     movieApi
@@ -44,6 +49,7 @@ function Detail({ id }) {
       })
       .then(data => {
         setSimilar(data.results.slice(0, 10));
+        setLoading(false);
       });
 
     movieApi
@@ -53,12 +59,9 @@ function Detail({ id }) {
       })
       .then(data => {
         setRecommendations(data.results);
-        console.log(data.results.slice(0, 10));
+        setLoading(false);
       });
-
-    setLoading(false);
-  }, []);
-
+  }, [id]);
   const BackImg = styled.div`
     position: absolute;
     width: 100%;
@@ -74,7 +77,6 @@ function Detail({ id }) {
 
   if (loading) return <div>{loading && <Loading />}</div>;
   if (!detail) return null;
-
   return (
     <>
       <div className='container-fluid px-5 content detail-wrap'>
@@ -84,7 +86,11 @@ function Detail({ id }) {
             <Card className='nobackground'>
               <Card.Img
                 variant='top'
-                src={`https://image.tmdb.org/t/p/w500${detail.poster_path}`}
+                src={
+                  detail.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${detail.poster_path}`
+                    : '../noimg.jpeg'
+                }
               />
             </Card>
             <Card className='right-text-wrap nobackground'>
@@ -137,17 +143,19 @@ function Detail({ id }) {
               return (
                 <div className='cast' key={idx}>
                   <div className='cast-img-wrap'>
-                    {cast.profile_path ? (
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
-                        alt='img'
-                        className='cast-img'
-                      />
-                    ) : (
-                      <div className='noimg'>
-                        <i>이미지 정보 없음</i>
-                      </div>
-                    )}
+                    <Link to={`/person/${cast.id}`}>
+                      {
+                        <img
+                          src={
+                            cast.profile_path
+                              ? `https://image.tmdb.org/t/p/w500${cast.profile_path}`
+                              : '../noimg.jpeg'
+                          }
+                          alt='img'
+                          className='cast-img'
+                        />
+                      }
+                    </Link>
                   </div>
                   <div className='py-1'>{cast.name}</div>
                   <div className='role-name'>{cast.character} 역</div>

@@ -1,0 +1,9 @@
+.notfound-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notfound {
+  background-color: rgb(158, 158, 158);
+}

@@ -33,8 +33,8 @@
 .cast-wrap {
   width: 100%;
   height: 350px;
-  overflow: hidden;
-  overflow-x: scroll;
+  user-select: none;
+  overflow: auto;
 }
 .cast-list {
   display: flex;

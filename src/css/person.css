@@ -1,0 +1,36 @@
+.person-wrap {
+  pointer-events: none;
+  position: relative;
+}
+.person-texts {
+  font-size: 1.4rem;
+  color: white;
+}
+.person-kr-title {
+  color: #fdb706;
+  font-weight: bold;
+}
+.person-detail {
+  display: flex;
+  justify-content: space-between;
+}
+.person-list {
+  display: flex;
+  flex-direction: column;
+}
+.list-title {
+  color: rgb(233, 177, 74);
+  font-size: 1.5rem;
+}
+.cast-wrap {
+  width: 100%;
+  height: auto;
+  user-select: none;
+  overflow: auto;
+}
+@media (max-width: 650px) {
+  .person-detail {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -5,6 +5,8 @@
 @import './css/loading.css';
 @import './css//datail.css';
 @import './css/movie_search.css';
+@import './css/not-found.css';
+@import './css/person.css';
 body {
   background-color: rgb(17, 13, 13);
 }

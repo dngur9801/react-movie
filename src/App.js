@@ -7,6 +7,8 @@ import UpComingContainer from './container/UpComingContainer';
 import DetailContainer from './container/DetailContainer';
 import { useSelector } from 'react-redux';
 import MovieSearchContainer from './container/MovieSearchContainer';
+import Person from './component/Person';
+import NotFoundScene from './component/NotFoundScene';
 
 function App() {
   const state = useSelector(state => state.movieReducer);
@@ -19,6 +21,8 @@ function App() {
         <Route path='/upcoming' component={UpComingContainer} />
         <Route path='/detail/:id' component={DetailContainer} />
         <Route path='/search' component={MovieSearchContainer}></Route>
+        <Route path='/person/:id' component={Person}></Route>
+        <Route path='*' component={NotFoundScene}></Route>
         {/* <Route render /> */}
       </Switch>
     </div>
