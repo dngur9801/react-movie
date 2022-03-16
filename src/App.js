@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import MovieSearchContainer from './container/MovieSearchContainer';
 import Person from './component/Person';
 import NotFoundScene from './component/NotFoundScene';
+import LikedList from './component/LikedList';
 
 function App() {
   const state = useSelector(state => state.movieReducer);
@@ -22,8 +23,8 @@ function App() {
         <Route path='/detail/:id' component={DetailContainer} />
         <Route path='/search' component={MovieSearchContainer}></Route>
         <Route path='/person/:id' component={Person}></Route>
+        <Route path='/liked' component={LikedList}></Route>
         <Route path='*' component={NotFoundScene}></Route>
-        {/* <Route render /> */}
       </Switch>
     </div>
   );

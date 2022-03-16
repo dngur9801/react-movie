@@ -16,7 +16,7 @@ function Person() {
 
   useEffect(() => {
     setLoading(true);
-
+    console.log(12);
     movieApi.person(id).then(result => {
       setPerson(result.data);
       setLoading(false);
@@ -24,16 +24,12 @@ function Person() {
 
     movieApi.personImages(id).then(result => {
       setPersonImages(result.data.profiles);
-      setLoading(false);
     });
 
     movieApi.personCredits(id).then(result => {
       setPersonCredits(result.data.cast);
-      setLoading(false);
     });
   }, []);
-
-  console.log(personCredits);
 
   if (loading) return <div>{loading && <Loading />}</div>;
   if (!person) return null;

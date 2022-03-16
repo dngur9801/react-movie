@@ -71,8 +71,21 @@
   background-color: #fdb706;
   color: black;
 }
+.right-btn-action {
+  background-color: #fdb706;
+  color: red;
+}
+
 .star {
   color: red;
+}
+.unliked-moive {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(194, 194, 194);
+  font-size: 1.7rem;
 }
 @media (min-width: 1600px) {
   .row-cols-xl-4 > * {

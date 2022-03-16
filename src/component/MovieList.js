@@ -1,7 +1,26 @@
 import { Card } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {
+  setLiked,
+  setLikedMovie,
+  setUnliked,
+  setUnlikedMovie,
+} from '../reducers/movieReducer';
 
 function MovieList({ movie, idx }) {
+  const state = useSelector(state => state.movieReducer);
+  const dispatch = useDispatch();
+  const abc = e => {
+    const likeMovie = JSON.parse(e.target.dataset.id);
+    if (state.likedList.find(item => item === likeMovie.id)) {
+      dispatch(setUnliked(likeMovie.id));
+      dispatch(setUnlikedMovie(likeMovie));
+    } else {
+      dispatch(setLiked(likeMovie.id));
+      dispatch(setLikedMovie(likeMovie));
+    }
+  };
   return (
     <div className='card-wrap mt-5 mb-5'>
       <Card>
@@ -30,7 +49,15 @@ function MovieList({ movie, idx }) {
               개봉일자 : {movie.release_date}
             </Card.Text>
           </div>
-          <button className='right-btn'>찜하기</button>
+          <button
+            className={`right-btn ${
+              state.likedList.indexOf(movie.id) !== -1 && 'right-btn-action'
+            }`}
+            onClick={abc}
+            data-id={JSON.stringify(movie)}
+          >
+            ♥️
+          </button>
         </Card.Body>
       </Card>
     </div>

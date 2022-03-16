@@ -17,9 +17,23 @@
   justify-content: flex-end;
 }
 #navbar .navbar-right a {
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
   color: black;
   font-weight: bold;
   color: white;
+}
+@media (min-width: 1800px) {
+  .container {
+    max-width: 100%;
+  }
+  #navbar .navbar-right a {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .header-position {
+    height: 62.5px;
+  }
 }
