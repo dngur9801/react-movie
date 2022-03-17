@@ -21,7 +21,6 @@ function MovieSearch() {
       setAnswer(result.data.results);
     });
   }, [keyword]);
-  console.log(answer);
   return (
     <div className='container-fluid px-lg-5 content'>
       <div className='search-wrap'>

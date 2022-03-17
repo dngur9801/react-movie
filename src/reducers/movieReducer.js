@@ -5,6 +5,7 @@ const SET_LIKED = 'SET_LIKED';
 const SET_UNLIKED = 'SET_UNLIKED';
 const SET_LIKED_MOVIE = 'SET_LIKED_MOVIE';
 const SET_UNLIKED_MOVIE = 'SET_UNLIKED_MOVIE';
+const SET_WATCH_MOVIE = 'SET_WATCH_MOVIE';
 
 // action method
 export const setVideoShow = () => ({ type: VIDEO_SHOW });
@@ -13,11 +14,13 @@ export const setLiked = id => ({ type: SET_LIKED, id });
 export const setUnliked = id => ({ type: SET_UNLIKED, id });
 export const setLikedMovie = id => ({ type: SET_LIKED_MOVIE, id });
 export const setUnlikedMovie = id => ({ type: SET_UNLIKED_MOVIE, id });
+export const setWatchMovie = id => ({ type: SET_WATCH_MOVIE, id });
 
 const initialState = {
   videoState: '',
   likedMovieList: [],
   likedList: [],
+  watchMovieList: [],
 };
 
 // reducer
@@ -54,6 +57,11 @@ export default function movieReducer(state = initialState, action) {
       return {
         ...state,
         likedList: [...state.likedList.filter(item => item !== action.id)],
+      };
+    case SET_WATCH_MOVIE:
+      return {
+        ...state,
+        watchMovieList: [...new Set([...state.watchMovieList, action.id])],
       };
     default:
       return state;

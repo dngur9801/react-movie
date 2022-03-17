@@ -25,7 +25,7 @@ function NavBar() {
                   <span>({state.likedList.length})</span>
                 ) : null}
               </Link>
-              <Link to='/search'>최근본영화</Link>
+              <Link to='/watch'>최근본영화</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

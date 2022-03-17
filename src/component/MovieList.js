@@ -6,12 +6,19 @@ import {
   setLikedMovie,
   setUnliked,
   setUnlikedMovie,
+  setWatchMovie,
 } from '../reducers/movieReducer';
 
 function MovieList({ movie, idx }) {
   const state = useSelector(state => state.movieReducer);
   const dispatch = useDispatch();
-  const abc = e => {
+
+  const addWatchMovie = e => {
+    const movie = JSON.parse(e.target.dataset.id);
+    dispatch(setWatchMovie(movie.id));
+  };
+
+  const onClickLike = e => {
     const likeMovie = JSON.parse(e.target.dataset.id);
     if (state.likedList.find(item => item === likeMovie.id)) {
       dispatch(setUnliked(likeMovie.id));
@@ -21,6 +28,7 @@ function MovieList({ movie, idx }) {
       dispatch(setLikedMovie(likeMovie));
     }
   };
+
   return (
     <div className='card-wrap mt-5 mb-5'>
       <Card>
@@ -35,6 +43,8 @@ function MovieList({ movie, idx }) {
             }
             title={movie.title}
             alt={movie.title}
+            data-id={JSON.stringify(movie)}
+            onClick={addWatchMovie}
           />
         </Link>
         <Card.Body>
@@ -53,7 +63,7 @@ function MovieList({ movie, idx }) {
             className={`right-btn ${
               state.likedList.indexOf(movie.id) !== -1 && 'right-btn-action'
             }`}
-            onClick={abc}
+            onClick={onClickLike}
             data-id={JSON.stringify(movie)}
           >
             ♥️

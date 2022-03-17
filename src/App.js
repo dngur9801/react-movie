@@ -10,6 +10,7 @@ import MovieSearchContainer from './container/MovieSearchContainer';
 import Person from './component/Person';
 import NotFoundScene from './component/NotFoundScene';
 import LikedList from './component/LikedList';
+import WacthMovie from './component/WatchMovie';
 
 function App() {
   const state = useSelector(state => state.movieReducer);
@@ -24,6 +25,7 @@ function App() {
         <Route path='/search' component={MovieSearchContainer}></Route>
         <Route path='/person/:id' component={Person}></Route>
         <Route path='/liked' component={LikedList}></Route>
+        <Route path='/watch' component={WacthMovie}></Route>
         <Route path='*' component={NotFoundScene}></Route>
       </Switch>
     </div>
