@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 function NavBar() {
   const state = useSelector(state => state.movieReducer);
 
@@ -15,17 +15,31 @@ function NavBar() {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav' className='navbar-right'>
             <Nav>
-              <Link to='/'>인기 영화</Link>
-              <Link to='/nowplaying'>현재 상영영화</Link>
-              <Link to='/upcoming'>개봉 예정영화</Link>
-              <Link to='/search'>영화검색</Link>
-              <Link to='/liked'>
-                찜한영화
-                {state.likedList.length !== 0 ? (
-                  <span>({state.likedList.length})</span>
-                ) : null}
-              </Link>
-              <Link to='/watch'>최근본영화</Link>
+              <span className='nav-item'>
+                <NavLink to='/' exact>
+                  인기 영화
+                </NavLink>
+              </span>
+              <span className='nav-item'>
+                <NavLink to='/nowplaying'>현재 상영영화</NavLink>
+              </span>
+              <span className='nav-item'>
+                <NavLink to='/upcoming'>개봉 예정영화</NavLink>
+              </span>
+              <span className='nav-item'>
+                <NavLink to='/search'>영화검색</NavLink>
+              </span>
+              <span className='nav-item'>
+                <NavLink to='/liked'>
+                  찜한영화
+                  {state.likedList.length !== 0 ? (
+                    <span>({state.likedList.length})</span>
+                  ) : null}
+                </NavLink>
+              </span>
+              <span className='nav-item'>
+                <NavLink to='/watch'>최근본영화</NavLink>
+              </span>
             </Nav>
           </Navbar.Collapse>
         </Container>

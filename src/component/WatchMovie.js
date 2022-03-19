@@ -21,17 +21,20 @@ function WacthMovie() {
       });
     });
   }, []);
-
   return (
     <>
       <NavBar />
       <div className='container-fluid px-lg-5 content'>
         <p className='title'>최근본영화</p>
-        <div className='row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
-          {watchResult.map((movie, idx) => {
-            return <MovieList movie={movie} idx={idx} key={idx} />;
-          })}
-        </div>
+        {watchMovieList.length === 0 ? (
+          <div className='unliked-moive'>최근본영화가 없습니다.</div>
+        ) : (
+          <div className='row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
+            {watchResult.map((movie, idx) => {
+              return <MovieList movie={movie} idx={idx} key={idx} />;
+            })}
+          </div>
+        )}
       </div>
     </>
   );
