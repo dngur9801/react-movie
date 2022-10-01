@@ -5,7 +5,6 @@ import VideoPlayer from '../component/VideoPlayer';
 
 function DetailContainer() {
   const { id } = useParams();
-
   return (
     <>
       <NavBar />

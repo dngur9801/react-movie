@@ -4,7 +4,10 @@ import ReactPlayer from 'react-player/lazy';
 import { movieApi } from '../api/axios';
 import Loading from './Loading';
 
-function VideoPlayer({ id = '823625' }) {
+// movieApi.nowPlaying().then(result => {
+//   console.log(result.data.results);
+// });
+function VideoPlayer({ id = '744276' }) {
   const [video, setVideo] = useState();
   useEffect(() => {
     movieApi.videos(id).then(result => {

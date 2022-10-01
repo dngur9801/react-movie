@@ -61,7 +61,7 @@ function Detail({ id }) {
         setRecommendations(data.results);
         setLoading(false);
       });
-  }, [id]);
+  }, [dispatch, id]);
   const BackImg = styled.div`
     position: absolute;
     width: 100%;
