@@ -10,7 +10,7 @@ function NavBar() {
       <Navbar collapseOnSelect expand='lg' variant='dark' id='navbar'>
         <Container>
           <Navbar.Brand>
-            <Link to='/'>MovieBox</Link>
+            <Link to='/'>ShowMV</Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav' className='navbar-right'>

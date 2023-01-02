@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import { movieApi } from '../api/axios';
-import Loading from './Loading';
 
 // movieApi.nowPlaying().then(result => {
 //   console.log(result.data.results);
 // });
-function VideoPlayer({ id = '744276' }) {
+function VideoPlayer({ id = '76600' }) {
   const [video, setVideo] = useState();
   useEffect(() => {
     movieApi.videos(id).then(result => {
