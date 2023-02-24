@@ -17,3 +17,6 @@
 - [x] 찜한영화
 - [x] 최근본영화
 - [x] 반응형
+
+## 프로젝트 진행중 마주친 이슈와 해결
+- https://velog.io/@dngur9801/react-netlify-프로젝트-배포-후-새로고침시-NotFound-에러
